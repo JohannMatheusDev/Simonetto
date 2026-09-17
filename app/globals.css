@@ -1,26 +1,136 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Paleta oficial Simonetto (Guia de Redes Sociais 2025/2026): preto, branco, cinza e dourado */
+@theme {
+  --color-ink: #000000;
+  --color-graphite: #222220;
+  --color-paper: #fefefe;
+  --color-gold: #b49057;
+  --color-gold-light: #cfb283;
+  --color-stone: #f2efea;
+  --color-mist: #6f6e69;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --animate-rise: rise 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-hero-zoom: hero-zoom 2.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-scroll-line: scroll-line 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+
+  @keyframes scroll-line {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(200%);
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hero-zoom {
+    from {
+      transform: scale(1.12);
+    }
+    to {
+      transform: scale(1);
+    }
   }
 }
 
+/* Fontes oficiais: Gotham (substituída por Montserrat enquanto não houver licença web) e Playfair Display */
+@theme inline {
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+}
+
+html {
+  background: var(--color-paper);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-ink);
+}
+
+/* Trava o scroll enquanto a intro da logo está na tela */
+html.intro-lock,
+html.intro-lock body {
+  overflow: hidden;
+}
+
+/* A logo oficial é preta; em fundos escuros ela é invertida para branco */
+.logo-white {
+  filter: brightness(0) invert(1);
+}
+
+/* Tipografia dos artigos do blog */
+.article {
+  color: var(--color-graphite);
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+
+.article > * + * {
+  margin-top: 1.25em;
+}
+
+.article h2 {
+  margin-top: 2.25em;
+  font-size: 1.6rem;
+  line-height: 1.3;
+  font-weight: 500;
+  color: var(--color-ink);
+  text-wrap: balance;
+}
+
+.article ul {
+  display: grid;
+  gap: 0.6em;
+  padding-left: 0;
+  list-style: none;
+}
+
+.article li {
+  position: relative;
+  padding-left: 1.6em;
+}
+
+.article li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.9em;
+  width: 0.8em;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+.article blockquote {
+  margin-block: 2em;
+  padding-left: 1.5em;
+  border-left: 2px solid var(--color-gold);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.55;
+  color: var(--color-ink);
+}
+
+.article strong {
+  font-weight: 600;
+  color: var(--color-ink);
 }

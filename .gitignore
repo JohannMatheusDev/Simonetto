@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# vídeos-fonte do tour (os frames gerados ficam em public/tour)
+/videos
