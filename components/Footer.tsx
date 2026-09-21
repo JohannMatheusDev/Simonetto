@@ -53,9 +53,14 @@ export default function Footer() {
           <p>
             © {new Date().getFullYear()} {site.name}. Todos os direitos reservados.
           </p>
-          <a href={site.officialSite} target="_blank" rel="noopener noreferrer" className="hover:text-paper/70">
-            simonetto.com.br
-          </a>
+          <div className="flex gap-6">
+            <Link href="/politica-de-privacidade" className="hover:text-paper/70">
+              Política de privacidade
+            </Link>
+            <a href={site.officialSite} target="_blank" rel="noopener noreferrer" className="hover:text-paper/70">
+              simonetto.com.br
+            </a>
+          </div>
         </div>
       </div>
     </footer>

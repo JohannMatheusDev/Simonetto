@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { whatsappLink } from "@/lib/site";
+import { trackEvent } from "@/lib/analytics";
 
 const environments = [
   "Cozinha",
@@ -38,6 +39,7 @@ export default function ContactForm() {
     ].filter(Boolean);
 
     window.open(whatsappLink(lines.join("\n")), "_blank", "noopener,noreferrer");
+    trackEvent("envio_formulario", { ambientes: chosen || "nao informado" });
     setSent(true);
   };
 

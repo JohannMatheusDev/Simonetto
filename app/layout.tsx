@@ -5,6 +5,8 @@ import SmoothScroll from "@/components/SmoothScroll";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import CookieBanner from "@/components/CookieBanner";
+import Analytics from "@/components/Analytics";
 import { site } from "@/lib/site";
 
 const montserrat = Montserrat({
@@ -46,6 +48,8 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
           <WhatsAppButton />
+          <CookieBanner />
+          <Analytics />
         </SmoothScroll>
       </body>
     </html>

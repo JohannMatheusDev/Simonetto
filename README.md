@@ -25,4 +25,15 @@ npm run tour:frames -- videos/tour.mp4   # converte o vídeo do tour em frames
 - `lib/tour.ts`: textos e tempos dos capítulos do tour.
 - `docs/tour-video.md`: roteiro, prompts para IA de vídeo e como colocar o vídeo no site.
 
+## Medição de visitas
+
+O site não grava cookie próprio. O aviso de cookies controla o mapa do Google na página de contato e a medição de visitas, que fica desligada até existir a variável:
+
+```bash
+# .env.local (desenvolvimento) e nas variáveis do deploy
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+```
+
+Sem essa variável o site não carrega nada de fora. Com ela, e só depois do "aceitar", entram o Google Analytics e estes eventos: `clique_whatsapp`, `clique_telefone`, `clique_email`, `clique_instagram` e `envio_formulario`.
+
 Antes de publicar, revise os itens marcados com `TODO` em `lib/site.ts` (domínio, e-mail, horário e dados da equipe).
