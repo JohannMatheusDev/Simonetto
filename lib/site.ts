@@ -50,17 +50,3 @@ export const brandNumbers = [
   { value: 80, prefix: "≈", suffix: "", label: "revendas pelo Brasil" },
   { value: 17, suffix: " estados", label: "com presença Simonetto" },
 ];
-
-// TODO: substituir pelos dados reais de quem está à frente da Simonetto Guarapuava
-export const team: { name: string; role: string; bio: string; photo?: string }[] = [
-  {
-    name: "Nome do responsável",
-    role: "Sócio-diretor",
-    bio: "Escreva aqui uma breve apresentação: trajetória, o que motivou trazer a Simonetto para Guarapuava e como acompanha cada projeto.",
-  },
-  {
-    name: "Nome do responsável",
-    role: "Projetos e atendimento",
-    bio: "Apresente quem conduz os projetos: formação, experiência e o cuidado no atendimento do primeiro contato até a montagem.",
-  },
-];

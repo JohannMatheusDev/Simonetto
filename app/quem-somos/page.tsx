@@ -6,12 +6,12 @@ import Eyebrow from "@/components/Eyebrow";
 import Emphasis from "@/components/Emphasis";
 import CountUp from "@/components/CountUp";
 import CtaBanner from "@/components/CtaBanner";
-import { brandNumbers, site, team } from "@/lib/site";
+import { brandNumbers, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Quem somos",
   description:
-    "Conheça a história da Simonetto Móveis Planejados, nascida em Ampére-PR, e a equipe da Simonetto Guarapuava.",
+    "Conheça a história da Simonetto Móveis Planejados, nascida em Ampére-PR, e o showroom de Guarapuava.",
 };
 
 // Fontes: simonetto.com.br/conheca-a-empresa e blog oficial "Simonetto: 30 anos de tradição e credibilidade"
@@ -147,29 +147,6 @@ export default function AboutPage() {
               parceiros e o arquiteto Gabriel Fernandes, criador do espaço Casa Veredas Simonetto na Casa Cor
               São Paulo.
             </p>
-          </Reveal>
-        </div>
-
-        <div className="mx-auto max-w-7xl px-6 pb-28 md:px-10 md:pb-36">
-          <Reveal className="grid gap-6 md:grid-cols-2" stagger={0.15}>
-            {team.map((person, i) => (
-              <article key={i} className="flex flex-col gap-8 bg-paper p-8 sm:flex-row md:p-10">
-                <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden bg-graphite sm:w-40">
-                  {person.photo ? (
-                    <Image src={person.photo} alt={person.name} fill sizes="160px" className="object-cover" />
-                  ) : (
-                    <div className="flex size-full items-center justify-center text-[10px] uppercase tracking-[0.25em] text-paper/40">
-                      Foto
-                    </div>
-                  )}
-                </div>
-                <div>
-                  <p className="text-[11px] uppercase tracking-[0.25em] text-mist">{person.role}</p>
-                  <h3 className="mt-3 text-2xl font-light">{person.name}</h3>
-                  <p className="mt-4 leading-relaxed text-graphite">{person.bio}</p>
-                </div>
-              </article>
-            ))}
           </Reveal>
         </div>
       </section>
