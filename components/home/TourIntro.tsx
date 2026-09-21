@@ -52,6 +52,11 @@ export default function TourIntro({
       const q = gsap.utils.selector(root);
       const scene = stage.querySelector("[data-scene]");
       const firstChapter = stage.querySelector("[data-chapter]");
+      // A intro anima o conteúdo interno e o scroll controla o capítulo inteiro.
+      // Antes as duas animações disputavam o mesmo elemento: o scroll é liberado 1,6 s
+      // antes de a intro terminar, e quem rolasse nesse intervalo via o texto do primeiro
+      // capítulo ficar preso na tela até o fim do tour, sobreposto aos outros capítulos.
+      const firstChapterInner = stage.querySelector("[data-chapter-inner]");
       const tourUi = stage.querySelectorAll("[data-tour-ui]");
 
       const unlock = () => {
@@ -98,7 +103,8 @@ export default function TourIntro({
           .to(q("[data-intro-panel=right]"), { xPercent: 100, duration: 1.5, ease: "expo.inOut" }, 0.5)
           .to(scene, { scale: 1, rotateX: 0, yPercent: 0, duration: 2.4, ease: "expo.out" }, 0.8)
           .call(unlock, [], 1.6)
-          .fromTo(firstChapter, { autoAlpha: 0, y: 40 }, { autoAlpha: 1, y: 0, duration: 1.3, ease: "expo.out" }, 1.5)
+          .set(firstChapter, { autoAlpha: 1 }, 0)
+          .fromTo(firstChapterInner, { autoAlpha: 0, y: 40 }, { autoAlpha: 1, y: 0, duration: 1.3, ease: "expo.out" }, 1.5)
           .to(tourUi, { autoAlpha: 1, duration: 0.8 }, 1.9);
       });
       openRef.current = open;

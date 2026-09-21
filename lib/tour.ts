@@ -89,6 +89,6 @@ export const tourChapters: TourChapter[] = [
     start: 0.8,
     end: 1,
     align: "left",
-    fallbackImage: "/images/loja/sala-reuniao.jpg",
+    fallbackImage: "/images/loja/cozinha.jpg",
   },
 ];

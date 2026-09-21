@@ -8,7 +8,7 @@ import { whatsappLink } from "@/lib/site";
 export default function CtaBanner() {
   return (
     <section className="relative overflow-hidden bg-ink text-paper">
-      <Image src="/images/loja/cozinha.jpg" alt="" fill sizes="100vw" className="object-cover opacity-40" />
+      <Image src="/images/loja/sala-reuniao.jpg" alt="" fill sizes="100vw" className="object-cover opacity-40" />
       <div className="absolute inset-0 bg-linear-to-r from-ink via-ink/75 to-ink/20" />
 
       <div className="relative mx-auto max-w-7xl px-6 py-28 md:px-10 md:py-40">

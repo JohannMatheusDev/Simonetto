@@ -125,7 +125,7 @@ export default function StoreTour() {
                 }`}
                 style={hidden}
               >
-                <div className="max-w-xl">
+                <div data-chapter-inner className="max-w-xl">
                   <Eyebrow>{chapter.eyebrow}</Eyebrow>
                   <Heading className="mt-5 text-4xl font-light leading-[1.06] text-balance md:text-6xl">
                     <Emphasis text={chapter.title} />
