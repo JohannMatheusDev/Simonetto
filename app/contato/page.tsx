@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
+import MapEmbed from "@/components/MapEmbed";
 import Eyebrow from "@/components/Eyebrow";
 import Reveal from "@/components/Reveal";
 import { site, whatsappLink } from "@/lib/site";
@@ -77,14 +78,7 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-stone">
-        <iframe
-          title="Mapa do showroom Simonetto Guarapuava"
-          src={site.mapsEmbed}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="block h-[28rem] w-full grayscale"
-          data-lenis-prevent
-        />
+        <MapEmbed />
       </section>
     </>
   );
