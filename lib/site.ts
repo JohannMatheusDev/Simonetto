@@ -5,7 +5,6 @@ export const site = {
   slogan: "Milimetricamente você",
   description:
     "Showroom Simonetto Móveis Planejados em Guarapuava-PR. Cozinhas, salas, dormitórios e ambientes corporativos projetados sob medida, milímetro a milímetro.",
-  // TODO: confirmar o domínio definitivo
   url: "https://simonettoguarapuava.com.br",
   address: {
     street: "Rua Marechal Floriano Peixoto, 1861",

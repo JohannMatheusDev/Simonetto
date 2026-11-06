@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,6 +16,29 @@ import { whatsappLink } from "@/lib/site";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const hidden = { visibility: "hidden", opacity: 0 } as const;
+
+// Foto horizontal em tela deitada e vertical em tela em pé (mesmo critério do useFrameSequence)
+function ArtDirectedImage({
+  landscape,
+  portrait,
+  position,
+  first,
+}: {
+  landscape: string;
+  portrait: string;
+  position?: string;
+  first: boolean;
+}) {
+  const common = { alt: "", fill: true, sizes: "100vw", loading: "eager", fetchPriority: first ? "high" : "auto" } as const;
+  const wide = getImageProps({ ...common, src: landscape }).props.srcSet;
+  const { props } = getImageProps({ ...common, src: portrait });
+  return (
+    <picture>
+      <source media="(min-aspect-ratio: 1/1)" srcSet={wide} />
+      <img {...props} alt="" className="object-cover" style={{ ...props.style, objectPosition: position }} />
+    </picture>
+  );
+}
 
 // Hero da home: tour de "drone" pela loja controlado pelo scroll.
 // Com frames em /public/tour usa o vídeo; sem frames, anima as fotos reais da loja.
@@ -94,17 +117,26 @@ export default function StoreTour() {
                 className="absolute inset-0"
                 style={i === 0 ? undefined : hidden}
               >
-                <Image
-                  src={chapter.fallbackImage}
-                  alt=""
-                  fill
-                  preload={i === 0}
-                  // as fotos seguintes ficam ocultas até a troca; lazy faria piscar a foto anterior
-                  loading="eager"
-                  sizes="100vw"
-                  className="object-cover"
-                  style={{ objectPosition: chapter.fallbackPosition }}
-                />
+                {chapter.fallbackImageLandscape ? (
+                  <ArtDirectedImage
+                    landscape={chapter.fallbackImageLandscape}
+                    portrait={chapter.fallbackImage}
+                    position={chapter.fallbackPosition}
+                    first={i === 0}
+                  />
+                ) : (
+                  <Image
+                    src={chapter.fallbackImage}
+                    alt=""
+                    fill
+                    preload={i === 0}
+                    // as fotos seguintes ficam ocultas até a troca; lazy faria piscar a foto anterior
+                    loading="eager"
+                    sizes="100vw"
+                    className="object-cover"
+                    style={{ objectPosition: chapter.fallbackPosition }}
+                  />
+                )}
               </div>
             ))
           )}

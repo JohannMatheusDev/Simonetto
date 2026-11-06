@@ -36,6 +36,8 @@ export type TourChapter = {
   // Foto exibida enquanto os frames do vídeo não existem
   fallbackImage: string;
   fallbackPosition?: string;
+  // Versão horizontal da foto para telas deitadas (fallbackImage fica para o celular em pé)
+  fallbackImageLandscape?: string;
 };
 
 // Um capítulo por cena do vídeo (shots 1 a 5 em docs/tour-video.md)
@@ -49,6 +51,8 @@ export const tourChapters: TourChapter[] = [
     end: 0.18,
     align: "left",
     fallbackImage: "/images/loja/fachada.jpg",
+    // estendida para 16:9 com IA (Gemini) a partir de fachada.jpg; a vertical cortava quase toda a loja
+    fallbackImageLandscape: "/images/loja/fachada-16x9.jpg",
     fallbackPosition: "50% 30%",
   },
   {
