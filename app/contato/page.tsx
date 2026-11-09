@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 
 const channels = [
   { label: "WhatsApp", value: site.whatsapp, href: whatsappLink(), external: true },
-  { label: "Telefone", value: site.phone, href: `tel:+55${site.phone.replace(/\D/g, "")}` },
   { label: "Instagram", value: site.instagramHandle, href: site.instagram, external: true },
 ];
 

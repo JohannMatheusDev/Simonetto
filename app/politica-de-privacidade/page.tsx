@@ -82,11 +82,8 @@ export default function PrivacyPage() {
 
           <h2>Como falar com a gente</h2>
           <p>
-            Para exercer esses direitos ou tirar dúvidas sobre privacidade, escreva para{" "}
-            <a href={`mailto:${site.email}`} className="underline underline-offset-4">
-              {site.email}
-            </a>{" "}
-            ou fale com a loja pelo WhatsApp {site.whatsapp}. Nosso showroom fica na{" "}
+            Para exercer esses direitos ou tirar dúvidas sobre privacidade, fale com a loja pelo
+            WhatsApp {site.whatsapp}. Nosso showroom fica na{" "}
             {site.address.street}, {site.address.district}, {site.address.city} - {site.address.state}.
           </p>
 
