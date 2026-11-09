@@ -13,11 +13,9 @@ export const site = {
     state: "PR",
     zip: "85010-250",
   },
-  phone: "(42) 3304-4379",
-  whatsapp: "(42) 99860-4155",
-  whatsappNumber: "5542998604155",
-  // TODO: confirmar e-mail de atendimento (este é o que consta no site oficial da Simonetto)
-  email: "leonardo@silvereng.com.br",
+  phone: "(42) 98835-3759",
+  whatsapp: "(42) 98835-3759",
+  whatsappNumber: "5542988353759",
   // TODO: confirmar horário de funcionamento
   hours: "Segunda a sexta, das 8h às 18h",
   instagram: "https://www.instagram.com/simonettoguarapuava",
