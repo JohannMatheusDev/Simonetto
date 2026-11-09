@@ -13,7 +13,6 @@ export const site = {
     state: "PR",
     zip: "85010-250",
   },
-  phone: "(42) 98835-3759",
   whatsapp: "(42) 98835-3759",
   whatsappNumber: "5542988353759",
   // TODO: confirmar horário de funcionamento

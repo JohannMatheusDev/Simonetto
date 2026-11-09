@@ -38,9 +38,6 @@ export default function Footer() {
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="block hover:text-paper">
               WhatsApp {site.whatsapp}
             </a>
-            <a href={`tel:+55${site.phone.replace(/\D/g, "")}`} className="block hover:text-paper">
-              Telefone {site.phone}
-            </a>
             <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="block hover:text-paper">
               {site.instagramHandle}
             </a>
